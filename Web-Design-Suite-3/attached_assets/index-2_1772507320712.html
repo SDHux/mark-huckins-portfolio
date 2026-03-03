@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark M. Huckins - Enterprise Sales Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #0f172a;
+            --text-gray: #64748b;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--bg-white);
+            box-shadow: 0 1px 3px var(--shadow);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section - Combined with About */
+        .hero-about {
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .hero-about .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        section .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-category li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            background: var(--bg-white);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        /* AI Tools Section */
+        .ai-section {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .ai-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .ai-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .ai-stack-item {
+            background: var(--bg-white);
+            color: var(--text-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .ai-stack-item:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .tool-image {
+            width: 100%;
+            height: 300px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tool-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .tool-card:hover .tool-image img {
+            transform: scale(1.05);
+        }
+
+        .tool-image:after {
+            content: 'View Live Demo →';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+        }
+
+        .tool-card:hover .tool-image:after {
+            opacity: 1;
+        }
+
+        .tool-content {
+            padding: 2rem;
+        }
+
+        .tool-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .tool-content ul {
+            list-style: none;
+        }
+
+        .tool-content li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .tool-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Clients Section */
+        .clients-list {
+            margin-top: 3rem;
+        }
+
+        .client-category {
+            margin-bottom: 3rem;
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .client-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .client-names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .client-name {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .client-name:not(:last-child):after {
+            content: "•";
+            margin-left: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .contact-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Chatbot Styles */
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #chat-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s;
+        }
+
+        #chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+        }
+
+        #chat-container {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 380px;
+            height: 550px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #chat-container.active {
+            display: flex;
+        }
+
+        #chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        #chat-header p {
+            margin: 0.25rem 0 0 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        #close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: var(--bg-light);
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.user {
+            align-items: flex-end;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 0.875rem 1.125rem;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .message.assistant .message-content {
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+        }
+
+        .message.user .message-content {
+            background: var(--primary);
+            color: white;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 0.875rem 1.125rem;
+            background: white;
+            border-radius: 12px;
+            max-width: 80%;
+            border: 1px solid var(--border);
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-gray);
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        .suggestions {
+            display: grid;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .suggestion-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: all 0.2s;
+        }
+
+        .suggestion-btn:hover {
+            border-color: var(--primary);
+            background: var(--bg-light);
+        }
+
+        #chat-input-container {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 0.875rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        #user-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        #send-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        #send-button:hover {
+            background: var(--primary-dark);
+        }
+
+        #send-button:disabled {
+            background: var(--text-gray);
+            cursor: not-allowed;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-about .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            #chat-container {
+                width: calc(100% - 40px);
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#ai-tools">AI</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero + About Combined Section -->
+    <section id="home" class="hero-about">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mark M. Huckins</h1>
+                <p class="subtitle">Enterprise Sales Professional</p>
+                <p class="tagline">Driving Growth Through Strategic Partnerships & Innovation</p>
+                
+                <div class="about-text">
+                    <p>With over a decade of experience in enterprise SaaS sales, I specialize in helping Fortune 1000 companies navigate digital transformation through innovative technology solutions.</p>
+                    
+                    <p>My approach centers on building lasting partnerships with C-suite executives, translating technical capabilities into strategic business value, and consistently exceeding revenue targets through consultative selling.</p>
+                    
+                    <p>I've had the privilege of working with leading global brands across CPG, retail, and technology sectors, driving multimillion-dollar growth initiatives and earning recognition as a President's Club performer.</p>
+                </div>
+            </div>
+            
+            <div>
+                <img src="https://i.imgur.com/WeXoLnz.png" alt="Mark M. Huckins" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">127%</div>
+                <div class="stat-label">Quota Achievement</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2.5M+</div>
+                <div class="stat-label">ARR Managed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95%+</div>
+                <div class="stat-label">Client Retention</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">136%</div>
+                <div class="stat-label">ACV Growth</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <p class="subtitle">Core competencies that drive success</p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Enterprise Sales</h3>
+                <ul>
+                    <li>Complex deal orchestration</li>
+                    <li>C-suite engagement</li>
+                    <li>Multi-stakeholder consensus</li>
+                    <li>Strategic account management</li>
+                    <li>Pipeline generation & forecasting</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Solution Selling</h3>
+                <ul>
+                    <li>MEDDIC methodology</li>
+                    <li>Challenger sales approach</li>
+                    <li>Sandler sales expertise</li>
+                    <li>ROI analysis & value mapping</li>
+                    <li>Technical requirement navigation</li>
+                    <li>Cross-functional collaboration</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Market Development</h3>
+                <ul>
+                    <li>GTM strategy design</li>
+                    <li>Customer segmentation</li>
+                    <li>Competitive positioning</li>
+                    <li>Net new logo acquisition</li>
+                    <li>ARR expansion</li>
+                    <li>Product-market fit validation</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Industry Expertise</h3>
+                <ul>
+                    <li>SaaS & Cloud Platforms</li>
+                    <li>AI/ML Technologies</li>
+                    <li>Data Management (PIM, PXM, MDM, GDSN)</li>
+                    <li>Supply Chain & Traceability</li>
+                    <li>Retail Analytics</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; text-align: center; color: var(--secondary);">Technology Toolkit</h3>
+        <div class="tech-stack">
+            <div class="tech-item">Salesforce</div>
+            <div class="tech-item">HubSpot</div>
+            <div class="tech-item">LinkedIn Sales Nav</div>
+            <div class="tech-item">ZoomInfo</div>
+            <div class="tech-item">Google Workspace</div>
+            <div class="tech-item">Slack</div>
+            <div class="tech-item">DocuSign</div>
+            <div class="tech-item">Zoom</div>
+            <div class="tech-item">Claude</div>
+            <div class="tech-item">Copilot</div>
+            <div class="tech-item">Genspark.ai</div>
+            <div class="tech-item">Gemini</div>
+        </div>
+    </section>
+
+    <!-- AI Tools Section -->
+    <section id="ai-tools">
+        <h2>Art of the Deal: Applying AI to Sales</h2>
+        <p class="subtitle">Self-generated AI-enabled sales tools architected from proven methodologies</p>
+
+        <div class="ai-section">
+            <div class="ai-intro">
+                My portfolio of AI-powered sales tools demonstrates practical application of emerging technologies to the sales process, combining strategic frameworks with modern development capabilities.
+            </div>
+
+            <div class="ai-stack">
+                <div class="ai-stack-item">Claude / Anthropic API</div>
+                <div class="ai-stack-item">GitHub</div>
+                <div class="ai-stack-item">Netlify</div>
+                <div class="ai-stack-item">Firebase</div>
+                <div class="ai-stack-item">SerpApi</div>
+                <div class="ai-stack-item">Railway</div>
+                <div class="ai-stack-item">Groq</div>
+                <div class="ai-stack-item">Supabase</div>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="https://salesproplatform.netlify.app/dashboard" target="_blank">
+                        <div class="tool-image">
+                            <img src="pipeline_screenshot.png" alt="Sales Pro Platform Dashboard">
+                        </div>
+                    </a>
+                    <div class="tool-content">
+                        <h3>Sales Pro Platform</h3>
+                        <ul>
+                            <li>Influenced by custom ICP</li>
+                            <li>Automated scraping (job listings, prospective companies, contacts)</li>
+                            <li>Outreach campaigns & messaging</li>
+                            <li>Pipeline progression tracking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <a href="https://huxdealroom.netlify.app" target="_blank">
+                        <div class="tool-image">
+                            <img src="dealroom_screenshot.png" alt="Hux Deal Room Interface">
+                        </div>
+                    </a>
+                    <div class="tool-content">
+                        <h3>Hux Deal Room</h3>
+                        <ul>
+                            <li>Role-based UI (internal sales rep / external prospect)</li>
+                            <li>Framework based on applied sales methodology (discovery, exec summary, key stakeholder alignment, mutual action plan)</li>
+                            <li>Example resource repository</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <h2>Trusted by Industry Leaders</h2>
+        <p class="subtitle">Proud to have partnered with world-class brands across multiple industries</p>
+
+        <div class="clients-list">
+            <div class="client-category">
+                <h3>Technology & Software</h3>
+                <div class="client-names">
+                    <span class="client-name">Microsoft</span>
+                    <span class="client-name">IBM</span>
+                    <span class="client-name">Oracle</span>
+                    <span class="client-name">eBay</span>
+                    <span class="client-name">Lyft</span>
+                </div>
+            </div>
+
+            <div class="client-category">
+                <h3>Healthcare & Life Sciences</h3>
+                <div class="client-names">
+                    <span class="client-name">Medtronic</span>
+                    <span class="client-name">Boston Scientific</span>
+                    <span class="client-name">ConMed</span>
+                    <span class="client-name">Philips Healthcare</span>
+                    <span class="client-name">Daiichi Sankyo</span>
+                </div>
+            </div>
+
+            <div class="client-category">
+                <h3>Consumer Packaged Goods</h3>
+                <div class="client-names">
+                    <span class="client-name">Procter & Gamble</span>
+                    <span class="client-name">McCormick & Company</span>
+                    <span class="client-name">Kellogg's</span>
+                    <span class="client-name">Dean Foods</span>
+                    <span class="client-name">Spectrum Brands</span>
+                </div>
+            </div>
+
+            <div class="client-category">
+                <h3>Retail & Consumer Brands</h3>
+                <div class="client-names">
+                    <span class="client-name">Walmart</span>
+                    <span class="client-name">Kroger</span>
+                    <span class="client-name">Staples</span>
+                    <span class="client-name">Best Buy</span>
+                    <span class="client-name">Levi's</span>
+                    <span class="client-name">Mattel</span>
+                    <span class="client-name">Fortune Brands</span>
+                    <span class="client-name">Owens Corning</span>
+                </div>
+            </div>
+
+            <div class="client-category">
+                <h3>Automotive & Manufacturing</h3>
+                <div class="client-names">
+                    <span class="client-name">Nissan</span>
+                    <span class="client-name">Subaru</span>
+                    <span class="client-name">Volkswagen</span>
+                    <span class="client-name">Bosch</span>
+                    <span class="client-name">Moen</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p class="subtitle">Let's connect and explore opportunities</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:mark.huckins@gmail.com">mark.huckins@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">📱</div>
+                <h3>Phone</h3>
+                <a href="tel:+18587524321">858.752.4321</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/mark-huckins" target="_blank">Connect on LinkedIn</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">📍</div>
+                <h3>Location</h3>
+                <p>San Diego, California</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mark M. Huckins. All rights reserved.</p>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget">
+        <button id="chat-button">💬</button>
+        <div id="chat-container">
+            <div id="chat-header">
+                <div>
+                    <h3>Mark's AI Assistant</h3>
+                    <p>Ask about my background, deals, and approach</p>
+                </div>
+                <button id="close-chat">×</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message assistant">
+                    <div class="message-content">Mark's assistant is typing…</div>
+                </div>
+                <div class="suggestions">
+                    <button class="suggestion-btn">What's your experience with AI/ML?</button>
+                    <button class="suggestion-btn">Tell me about your biggest wins.</button>
+                    <button class="suggestion-btn">How do you approach network selling?</button>
+                    <button class="suggestion-btn">Which industries have you sold into?</button>
+                </div>
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot functionality
+        const chatButton = document.getElementById('chat-button');
+        const chatContainer = document.getElementById('chat-container');
+        const closeChat = document.getElementById('close-chat');
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const suggestionButtons = document.querySelectorAll('.suggestion-btn');
+
+        chatButton.addEventListener('click', () => {
+            chatContainer.classList.add('active');
+            chatButton.style.display = 'none';
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+            chatButton.style.display = 'block';
+        });
+
+        async function sendMessage(message) {
+            if (!message.trim()) return;
+
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.innerHTML = `<div class="message-content">${message}</div>`;
+            chatMessages.appendChild(userMessage);
+
+            // Clear input
+            userInput.value = '';
+
+            // Show typing indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'typing-indicator active';
+            typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Disable send button
+            sendButton.disabled = true;
+
+            try {
+                const response = await fetch('/.netlify/functions/ask-mark', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                const data = await response.json();
+
+                // Remove typing indicator
+                typingIndicator.remove();
+
+                // Add assistant message
+                const assistantMessage = document.createElement('div');
+                assistantMessage.className = 'message assistant';
+                assistantMessage.innerHTML = `<div class="message-content">${data.response}</div>`;
+                chatMessages.appendChild(assistantMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+                typingIndicator.remove();
+                
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'message assistant';
+                errorMessage.innerHTML = `<div class="message-content">Sorry, I'm having trouble connecting. Please try again.</div>`;
+                chatMessages.appendChild(errorMessage);
+            }
+
+            // Re-enable send button
+            sendButton.disabled = false;
+        }
+
+        sendButton.addEventListener('click', () => {
+            sendMessage(userInput.value);
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage(userInput.value);
+            }
+        });
+
+        suggestionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                sendMessage(button.textContent);
+                // Remove suggestions after first use
+                document.querySelector('.suggestions').remove();
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
