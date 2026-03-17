@@ -11,7 +11,7 @@ import {
   Mail,
   Linkedin,
   Phone,
-  MessageSquare
+  MessageSquare,
   DoorOpen,
   Workflow,
   ExternalLink,
