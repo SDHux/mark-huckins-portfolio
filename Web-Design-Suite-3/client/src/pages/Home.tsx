@@ -11,8 +11,7 @@ import {
   Mail,
   Linkedin,
   Phone,
-  MessageSquare,
-  LayoutDashboard,
+  MessageSquare
   DoorOpen,
   Workflow,
   ExternalLink,
@@ -122,32 +121,20 @@ export default function Home() {
   ];
 
   const aiPortfolio = [
-    {
-      title: "Sales Pro Platform",
-      subtitle: "Dashboard & Intelligence",
-      icon: <LayoutDashboard className="w-6 h-6" />,
-      features: [
-        "Influenced by custom ICP",
-        "Automated scraping (job listings, prospective companies, contacts)",
-        "Outreach campaigns & messaging",
-        "Pipeline progression tracking"
-      ],
-      tech: ["Claude / Anthropic API", "GitHub", "Netlify", "Firebase"],
-      link: "https://salesproplatform.netlify.app/dashboard"
-    },
-    {
-      title: "Hux Deal Room",
-      subtitle: "Interface & Methodology",
-      icon: <DoorOpen className="w-6 h-6" />,
-      features: [
-        "Role-based UI (internal sales rep / external prospect)",
-        "Framework based on applied sales methodology (discovery, exec summary, key stakeholder alignment, mutual action plan)",
-        "Example resource repository"
-      ],
-      tech: ["SerpApi", "Railway", "Groq", "Supabase"],
-      link: "https://buyersagent.netlify.app"
-    }
-  ];
+  {
+    title: "Hux Deal Room",
+    subtitle: "Interface & Methodology",
+    icon: <DoorOpen className="w-6 h-6" />,
+    features: [
+      "Role-based UI (internal sales rep / external prospect)",
+      "Framework based on applied sales methodology (discovery, exec summary, key stakeholder alignment, mutual action plan)",
+      "Example resource repository"
+    ],
+    tech: ["SerpApi", "Railway", "Groq", "Supabase"],
+    link: "https://buyersagent.netlify.app",
+    pdfLink: "/hux-deal-room-one-sheet.pdf"
+  }
+];
 
   const clientPartnerships = [
     {
@@ -350,6 +337,15 @@ export default function Home() {
                     View Project Details
                     <ExternalLink className="ml-2 w-3 h-3 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </Button>
+              {project.pdfLink && (
+                <a
+                  href={project.pdfLink}
+                  download
+                  className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white transition-all"
+                >
+                  Download One Sheet (PDF)
+                </a>
+              )}
                 </div>
               </motion.div>
             ))}
