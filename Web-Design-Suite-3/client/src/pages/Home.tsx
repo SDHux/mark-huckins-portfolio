@@ -424,7 +424,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+{/* Playbook Download */}
+        <div className="flex justify-center mt-12 mb-4">
+          
+            href="/Mark_Huckins_Enterprise_Prospecting_Playbook.pdf"
+            download
+            className="inline-flex items-center gap-3 px-8 py-3 border border-white/20 text-white/60 hover:text-white hover:border-white/40 rounded-full text-sm font-medium transition-all duration-200 group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+              <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            Download Enterprise Prospecting Playbook
+          </a>
+        </div>
       {/* Tools Section */}
       <section id="tools" className="py-32 relative z-20 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
