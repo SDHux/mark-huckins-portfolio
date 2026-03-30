@@ -426,7 +426,7 @@ export default function Home() {
       </section>
 {/* Playbook Download */}
         <div className="flex justify-center mt-12 mb-4">
-          
+                    <a
             href="/Mark_Huckins_Enterprise_Prospecting_Playbook.pdf"
             download
             className="inline-flex items-center gap-3 px-8 py-3 border border-white/20 text-white/60 hover:text-white hover:border-white/40 rounded-full text-sm font-medium transition-all duration-200 group"
