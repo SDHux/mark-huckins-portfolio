@@ -249,7 +249,7 @@ export default function Home() {
             </motion.div>
             
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mt-10">
-              <Button size="lg" className="rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 transition-transform hover:scale-105 active:scale-95">
+              <Button size="lg" className="rounded-full bg-white text-black hover:bg-white/90 h-14 px-8 transition-transform hover:scale-105 active:scale-95" onClick={() => window.open('https://www.linkedin.com/in/mark-m-huckins/', '_blank')}>
                 Connect on LinkedIn
               </Button>
               <Button size="lg" variant="outline" className="rounded-full glass h-14 px-8 group" onClick={() => document.getElementById('ai-portfolio')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -511,7 +511,7 @@ export default function Home() {
                 <Mail className="w-6 h-6 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <div className="text-sm font-medium">Email Me</div>
               </a>
-              <a href="https://linkedin.com" className="glass p-8 rounded-2xl hover:bg-white/10 transition-all group">
+              <a href="https://www.linkedin.com/in/mark-m-huckins/" target="_blank" rel="noopener" className="glass p-8 rounded-2xl hover:bg-white/10 transition-all group">
                 <Linkedin className="w-6 h-6 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <div className="text-sm font-medium">LinkedIn</div>
               </a>
