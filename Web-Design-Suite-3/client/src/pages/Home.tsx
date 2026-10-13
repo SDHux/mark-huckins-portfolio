@@ -138,7 +138,7 @@ export default function Home() {
     icon: <Workflow className="w-6 h-6" />,
     description: "A deal-room tool built by a salesperson for salespeople. Designed the workflow, built the product using Claude, and shipped a working self-service licensable platform.",
     proof: ["Process Intelligence", "Anthropic / Claude", "Product Design"],
-    link: "https://www.mybivy.com"
+    link: "https://mybivy.com/?demo=team"
   },
   {
     title: "LiVD",
