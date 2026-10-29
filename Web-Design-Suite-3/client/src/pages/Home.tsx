@@ -74,52 +74,52 @@ function TerritoryLog() {
   );
 }
 
-// Brands Mark has sold to and partnered with (logos cut from Mark's own logo
-// sheet, public/logos/*.png at 96 px tall). Walmart and Kroger are wordmarks
-// until their logo files are added. Sized by shape so wide and square logos
-// carry similar weight.
-const logos: { name: string; file?: string; w?: number; word?: { text: string; color: string; italic?: boolean } }[] = [
-  { name: "Walmart", word: { text: "Walmart", color: "#0071ce" } },
-  { name: "Microsoft", file: "microsoft", w: 425 },
-  { name: "Kroger", word: { text: "Kroger", color: "#134b97", italic: true } },
-  { name: "Cisco", file: "cisco", w: 182 },
-  { name: "Boston Scientific", file: "boston-scientific", w: 222 },
-  { name: "Medtronic", file: "medtronic", w: 100 },
-  { name: "Bosch", file: "bosch", w: 415 },
-  { name: "Kellogg's", file: "kelloggs", w: 275 },
-  { name: "Ford", file: "ford", w: 266 },
-  { name: "GE", file: "ge", w: 97 },
-  { name: "Philips", file: "philips", w: 75 },
-  { name: "Daiichi Sankyo", file: "daiichi-sankyo", w: 551 },
-  { name: "ConMed", file: "conmed", w: 498 },
-  { name: "Elanco", file: "elanco", w: 190 },
-  { name: "McCormick", file: "mccormick", w: 130 },
-  { name: "Duracell", file: "duracell", w: 588 },
-  { name: "Dean Foods", file: "dean-foods", w: 94 },
-  { name: "Fortune Brands", file: "fortune-brands", w: 384 },
-  { name: "Mattel", file: "mattel", w: 97 },
-  { name: "Spectrum Brands", file: "spectrum-brands", w: 348 },
-  { name: "Levi's", file: "levis", w: 193 },
-  { name: "Subaru", file: "subaru", w: 155 },
-  { name: "Audi", file: "audi", w: 184 },
-  { name: "Nissan", file: "nissan", w: 117 },
-  { name: "Moen", file: "moen", w: 409 },
-  { name: "Lyft", file: "lyft", w: 133 },
+// Brands Mark has sold to and partnered with, cut from Mark's own logo
+// sheets (public/logos/*.png; w×h is each file's size). Sized by shape so wide
+// and square logos carry similar weight.
+const logos: { name: string; file: string; w: number; h: number }[] = [
+  { name: "Walmart", file: "walmart", w: 174, h: 49 },
+  { name: "Microsoft", file: "microsoft", w: 425, h: 96 },
+  { name: "Kroger", file: "kroger", w: 139, h: 71 },
+  { name: "Cisco", file: "cisco", w: 182, h: 96 },
+  { name: "Boston Scientific", file: "boston-scientific", w: 222, h: 96 },
+  { name: "Ace Hardware", file: "ace-hardware", w: 93, h: 57 },
+  { name: "Medtronic", file: "medtronic", w: 100, h: 96 },
+  { name: "Bosch", file: "bosch", w: 415, h: 96 },
+  { name: "GS1", file: "gs1", w: 89, h: 73 },
+  { name: "Kellogg's", file: "kelloggs", w: 275, h: 96 },
+  { name: "Ford", file: "ford", w: 266, h: 96 },
+  { name: "Associated Wholesale Grocers", file: "awg", w: 80, h: 79 },
+  { name: "GE", file: "ge", w: 97, h: 96 },
+  { name: "Philips", file: "philips", w: 75, h: 96 },
+  { name: "Crossmark", file: "crossmark", w: 198, h: 41 },
+  { name: "Daiichi Sankyo", file: "daiichi-sankyo", w: 551, h: 96 },
+  { name: "ConMed", file: "conmed", w: 498, h: 96 },
+  { name: "SAS (Imperial Trading)", file: "sas", w: 127, h: 41 },
+  { name: "Elanco", file: "elanco", w: 190, h: 96 },
+  { name: "McCormick", file: "mccormick", w: 130, h: 96 },
+  { name: "MealSuite", file: "mealsuite", w: 198, h: 39 },
+  { name: "Duracell", file: "duracell", w: 588, h: 96 },
+  { name: "Dean Foods", file: "dean-foods", w: 94, h: 96 },
+  { name: "Chemonics", file: "chemonics", w: 204, h: 45 },
+  { name: "Fortune Brands", file: "fortune-brands", w: 384, h: 96 },
+  { name: "Mattel", file: "mattel", w: 97, h: 96 },
+  { name: "USAID", file: "usaid", w: 125, h: 38 },
+  { name: "Spectrum Brands", file: "spectrum-brands", w: 348, h: 96 },
+  { name: "Levi's", file: "levis", w: 193, h: 96 },
+  { name: "Mighty Oaks", file: "mighty-oaks", w: 191, h: 54 },
+  { name: "Subaru", file: "subaru", w: 155, h: 96 },
+  { name: "Audi", file: "audi", w: 184, h: 96 },
+  { name: "Nissan", file: "nissan", w: 117, h: 96 },
+  { name: "Moen", file: "moen", w: 409, h: 96 },
+  { name: "Lyft", file: "lyft", w: 133, h: 96 },
 ];
 
 function LogoMarquee() {
   const row = (hidden: boolean) => (
     <ul className="marquee-row m-0 p-0 list-none flex items-center gap-14 md:gap-20 pr-14 md:pr-20 shrink-0" aria-hidden={hidden || undefined}>
       {logos.map((l) => {
-        if (l.word)
-          return (
-            <li key={l.name} className="shrink-0">
-              <span className={`block text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-none ${l.word.italic ? "italic" : ""}`} style={{ color: l.word.color }}>
-                {l.word.text}
-              </span>
-            </li>
-          );
-        const aspect = (l.w ?? 96) / 96;
+        const aspect = l.w / l.h;
         const h = Math.max(22, Math.min(48, Math.round(58 / Math.sqrt(aspect))));
         return (
           <li key={l.name} className="shrink-0">
