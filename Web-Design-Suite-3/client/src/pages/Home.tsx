@@ -173,7 +173,11 @@ export default function Home() {
           <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16">
             <div className="flex flex-col gap-6">
               <span className={`${mono} text-[13px] tracking-[0.08em] text-[#9a9a92]`}>HOW I SELL NOW</span>
-              <H2>Most reps use AI. I deploy it.</H2>
+              <H2>
+                Most reps use AI.
+                <br />
+                I deploy it.
+              </H2>
               <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#c8c8c0]">Using AI is asking a chatbot to rewrite an email. Deploying it is building agents that work the territory while I'm in front of buyers. One rep, covering ground like a team of three. Every call that matters is still mine.</p>
             </div>
             <ol className="m-0 p-0 list-none flex flex-col">
