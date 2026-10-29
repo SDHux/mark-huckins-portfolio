@@ -74,6 +74,76 @@ function TerritoryLog() {
   );
 }
 
+// Brands Mark has sold to and partnered with (logos cut from Mark's own logo
+// sheet, public/logos/*.png at 96 px tall). Walmart and Kroger are wordmarks
+// until their logo files are added. Sized by shape so wide and square logos
+// carry similar weight.
+const logos: { name: string; file?: string; w?: number; word?: { text: string; color: string; italic?: boolean } }[] = [
+  { name: "Walmart", word: { text: "Walmart", color: "#0071ce" } },
+  { name: "Microsoft", file: "microsoft", w: 425 },
+  { name: "Kroger", word: { text: "Kroger", color: "#134b97", italic: true } },
+  { name: "Cisco", file: "cisco", w: 182 },
+  { name: "Boston Scientific", file: "boston-scientific", w: 222 },
+  { name: "Medtronic", file: "medtronic", w: 100 },
+  { name: "Bosch", file: "bosch", w: 415 },
+  { name: "Kellogg's", file: "kelloggs", w: 275 },
+  { name: "Ford", file: "ford", w: 266 },
+  { name: "GE", file: "ge", w: 97 },
+  { name: "Philips", file: "philips", w: 75 },
+  { name: "Daiichi Sankyo", file: "daiichi-sankyo", w: 551 },
+  { name: "ConMed", file: "conmed", w: 498 },
+  { name: "Elanco", file: "elanco", w: 190 },
+  { name: "McCormick", file: "mccormick", w: 130 },
+  { name: "Duracell", file: "duracell", w: 588 },
+  { name: "Dean Foods", file: "dean-foods", w: 94 },
+  { name: "Fortune Brands", file: "fortune-brands", w: 384 },
+  { name: "Mattel", file: "mattel", w: 97 },
+  { name: "Spectrum Brands", file: "spectrum-brands", w: 348 },
+  { name: "Levi's", file: "levis", w: 193 },
+  { name: "Subaru", file: "subaru", w: 155 },
+  { name: "Audi", file: "audi", w: 184 },
+  { name: "Nissan", file: "nissan", w: 117 },
+  { name: "Moen", file: "moen", w: 409 },
+  { name: "Lyft", file: "lyft", w: 133 },
+];
+
+function LogoMarquee() {
+  const row = (hidden: boolean) => (
+    <ul className="marquee-row m-0 p-0 list-none flex items-center gap-14 md:gap-20 pr-14 md:pr-20 shrink-0" aria-hidden={hidden || undefined}>
+      {logos.map((l) => {
+        if (l.word)
+          return (
+            <li key={l.name} className="shrink-0">
+              <span className={`block text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-none ${l.word.italic ? "italic" : ""}`} style={{ color: l.word.color }}>
+                {l.word.text}
+              </span>
+            </li>
+          );
+        const aspect = (l.w ?? 96) / 96;
+        const h = Math.max(22, Math.min(48, Math.round(58 / Math.sqrt(aspect))));
+        return (
+          <li key={l.name} className="shrink-0">
+            <img src={`/logos/${l.file}.png`} alt={hidden ? "" : l.name} height={h} width={Math.round(h * aspect)} decoding="async" style={{ height: h, width: "auto" }} />
+          </li>
+        );
+      })}
+    </ul>
+  );
+  return (
+    <section aria-label="Brands I've sold to and partnered with" className="border-y border-[#deded8] bg-white/60">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 pt-7 pb-1">
+        <span className={`${mono} text-[12px] md:text-[12.5px] tracking-[0.08em] text-[#5d5d57]`}>BRANDS I'VE SOLD TO AND PARTNERED WITH</span>
+      </div>
+      <div className="marquee relative overflow-hidden py-8">
+        <div className="marquee-track flex w-max">
+          {row(false)}
+          {row(true)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const agentWork = [
   "Every account researched overnight, with what changed flagged by morning",
   "The buying group mapped, so no deal hangs on one contact",
@@ -147,8 +217,10 @@ export default function Home() {
           <TerritoryLog />
         </section>
 
+        <LogoMarquee />
+
         {/* Deal profile */}
-        <section aria-label="Deal profile" className="max-w-[1200px] mx-auto px-5 md:px-8 pb-20 md:pb-28">
+        <section aria-label="Deal profile" className="max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-20 md:pb-28">
           <div className="grid grid-cols-2 lg:grid-cols-4 border-t-2 border-[#121212]">
             {dealProfile.map((d, i) => (
               <div key={d.big} className={`pt-7 pb-6 flex flex-col gap-2.5 ${i % 2 ? "pl-5 border-l border-[#deded8]" : "pr-5"} ${i > 0 ? "lg:pl-6 lg:border-l lg:border-[#deded8]" : ""} ${i > 1 ? "border-t lg:border-t-0 border-[#deded8]" : ""}`}>
