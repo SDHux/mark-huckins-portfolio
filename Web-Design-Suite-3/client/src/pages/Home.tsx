@@ -26,10 +26,10 @@ const agentWork = [
 const roles = [
   { when: "2025 – Now", company: "SRENE.io", title: "AI GTM Leader", text: "Designed the go-to-market system for an AI-native product company: positioning, pricing, ICP and partnerships, and put it to work against real deals." },
   { when: "2024 – 2025", company: "1WorldSync", title: "Senior Enterprise Account Manager", text: "127% of net new quota. Grew Tier I ACV 33% across Walmart and Kroger brands; 95%+ retention." },
-  { when: "2023 – 2024", company: "Gartner", title: "Global Strategic Account Manager", text: "$900K+ in new service agreements in the first 9 months with Medtronic, Boston Scientific and Philips; 100% renewal." },
+  { when: "2023 – 2024", company: "Gartner", title: "Global Strategic Account Manager", text: "$900K+ in new service agreements in the first 9 months with Medtronic, ConMed, Boston Scientific and Daiichi Sankyo; 100% renewal." },
   { when: "2021 – 2023", company: "CommerceIQ", title: "Enterprise Account Manager", text: "100% of net new quota from a fully self-sourced pipeline, selling an AI platform into a brand-new market." },
-  { when: "2019 – 2021", company: "Salsify", title: "Global Strategic Account Manager", text: "President's Club in the first 6 months. Top five company-wide, $2.5M+ ARR, 136% average ACV growth with P&G, Microsoft, IBM and Oracle." },
-  { when: "2011 – 2018", company: "i3BRANDS", title: "VP Business Development · Director of Sales", text: "Grew revenue from $3.5M to $15M and built a 24-person team. Formed an exclusive Lyft partnership to launch a logistics SaaS platform." },
+  { when: "2019 – 2021", company: "Salsify", title: "Global Strategic Account Manager", text: "President's Club in the first 6 months. Top five company-wide, $2.5M+ ARR, 136% average ACV growth with Cisco, Bosch, Kellogg's, Spectrum Brands and Fortune Brands." },
+  { when: "2011 – 2018", company: "i3BRANDS", title: "VP Business Development · Director of Sales", text: "Grew revenue from $3.5M to $15M and built a 24-person team, with partners and clients including Lyft, Snap-on, Nissan, Infiniti, VW/Audi, Subaru, IBM InfoSphere and Earthbound Farm." },
 ];
 
 const skills = [
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="m-0 text-[15px] text-[#5d5d57] leading-[1.6]">Sold to: Walmart · Microsoft · Kroger · Cisco · P&amp;G · Kellogg's · IBM · Oracle · Medtronic · Boston Scientific · Philips · Daiichi Sankyo · Lyft</p>
+          <p className="m-0 text-[15px] text-[#5d5d57] leading-[1.6]">Sold to: Walmart · Microsoft · Kroger · Cisco · Bosch · Kellogg's · Spectrum Brands · Fortune Brands · Medtronic · ConMed · Boston Scientific · Daiichi Sankyo · Lyft · Nissan · Subaru · IBM</p>
         </section>
 
         {/* Skills */}
