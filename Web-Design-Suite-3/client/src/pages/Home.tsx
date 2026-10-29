@@ -126,7 +126,7 @@ export default function Home() {
     tag: "SRENE.IO",
     tagColor: "#6c8ee0",
     icon: <Sparkles className="w-6 h-6" />,
-    description: "Built the company from the ground up: positioning, pricing tiers, licensing structure, and brand architecture for a portfolio of sales-focused products.",
+    description: "Lead AI go-to-market strategy at SRENE.io, applying 15+ years of enterprise selling to a simple question: what does a modern seller’s process look like when AI runs through all of it? Designed the GTM system, deployed it in market, and continue to refine it against real deals. Focus areas include multi-threaded deal orchestration, executive call preparation, and buyer-facing deal rooms with myBivy.",
     proof: ["GTM Strategy", "Pricing & Packaging", "Brand Architecture"],
     link: "https://www.srene.io"
   },
