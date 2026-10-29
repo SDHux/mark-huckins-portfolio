@@ -3,6 +3,8 @@
 // skills, tools & disciplines, built, contact. Facts come from the master
 // resume; keep "10+ years" (Mark's call).
 
+import { useEffect, useState } from "react";
+
 const LINKEDIN = "https://www.linkedin.com/in/mark-m-huckins/";
 const EMAIL = "mark.huckins@gmail.com";
 
@@ -14,6 +16,63 @@ const dealProfile = [
   { big: "$1.5M", text: "largest single deal; Fortune 500 logos include Cisco, Microsoft, Walmart and Kroger" },
   { big: "±10%", text: "forecast accuracy for 11 consecutive quarters; commit called right for 8" },
 ];
+
+// The hero's example overnight run (an illustration, not real accounts).
+const nightLog = [
+  { t: "01:12", tag: "research", text: "42 accounts refreshed · 3 changes flagged" },
+  { t: "01:40", tag: "signal", text: "New VP Supply Chain at a top-10 account" },
+  { t: "02:05", tag: "icp", text: "18 new accounts match the ICP · scored and ranked" },
+  { t: "02:30", tag: "map", text: "Buying group updated · 2 gaps to cover" },
+  { t: "05:30", tag: "brief", text: "Exec call prep ready for the 9:00" },
+  { t: "05:45", tag: "follow-up", text: "4 prospect follow-ups drafted for review" },
+  { t: "06:00", tag: "crm", text: "Opportunities current · forecast refreshed" },
+];
+
+// Lines appear one at a time, then the human step; all at once for people
+// who prefer reduced motion.
+function TerritoryLog() {
+  const [shown, setShown] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(nightLog.length + 1);
+      return;
+    }
+    let n = 0;
+    const timer = window.setInterval(() => {
+      n += 1;
+      setShown(n);
+      if (n > nightLog.length) window.clearInterval(timer);
+    }, 650);
+    return () => window.clearInterval(timer);
+  }, []);
+  return (
+    <figure className="m-0 flex flex-col gap-3">
+      <div
+        role="img"
+        aria-label="Example of an overnight run: agents refresh accounts, flag a new executive, score accounts against the ICP, update the buying group, prepare an exec brief, draft follow-ups and update the CRM, then Mark reviews, approves and gets on the phone."
+        className={`${mono} bg-[#121212] text-[#e9e9e3] rounded-[18px] p-5 md:p-6 text-[12.5px] md:text-[13.5px] leading-[1.5] shadow-[0_24px_60px_-28px_rgba(18,18,18,0.55)] min-h-[420px] md:min-h-[440px] flex flex-col gap-3`}
+      >
+        <div className="flex justify-between text-[#8a8a83] pb-2.5 border-b border-[#2e2e2a]">
+          <span className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#7f95ff] animate-pulse" aria-hidden="true" />territory.log</span>
+          <span>overnight</span>
+        </div>
+        {nightLog.slice(0, shown).map((l) => (
+          <div key={l.t} className="flex gap-3.5 animate-in fade-in slide-in-from-bottom-1 duration-300">
+            <span className="text-[#8a8a83] shrink-0">{l.t}</span>
+            <span><span className="text-[#7f95ff]">{l.tag}</span> {l.text}</span>
+          </div>
+        ))}
+        {shown > nightLog.length && (
+          <div className="flex gap-3.5 pt-2.5 mt-auto border-t border-[#2e2e2a] text-white animate-in fade-in duration-500">
+            <span className="text-[#8a8a83] shrink-0">07:30</span>
+            <span>Mark: reviews, approves, gets on the phone</span>
+          </div>
+        )}
+      </div>
+      <figcaption className="text-[12.5px] text-[#5d5d57]">An example overnight run. The agents do the prep; every call that matters is still mine.</figcaption>
+    </figure>
+  );
+}
 
 const agentWork = [
   "Every account researched overnight, with what changed flagged by morning",
@@ -72,9 +131,10 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section id="top" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-20 md:pt-32 pb-16 md:pb-24 flex flex-col gap-7 md:gap-8">
+        <section id="top" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-16 md:pb-24 grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] gap-12 lg:gap-14 items-center">
+          <div className="flex flex-col gap-7 md:gap-8">
           <span className={`${mono} text-[12.5px] md:text-[13px] tracking-[0.08em] text-[#5d5d57]`}>ENTERPRISE SALES EXECUTIVE · SAN DIEGO</span>
-          <h1 className="m-0 text-[46px] sm:text-[64px] md:text-[88px] leading-[0.98] tracking-[-0.035em] font-bold max-w-[1000px]">I sell to the Fortune&nbsp;500. My agents work the territory.</h1>
+          <h1 className="m-0 text-[46px] sm:text-[60px] lg:text-[72px] leading-[0.98] tracking-[-0.035em] font-bold">I sell to the Fortune&nbsp;500. My agents work the territory.</h1>
           <p className="m-0 text-[18px] md:text-[21px] leading-[1.5] text-[#3c3c38] max-w-[720px]">
             10+ years closing enterprise SaaS with C-suite buyers at Walmart, Microsoft, Kroger and Cisco. Today I run my territory with AI agents aiding the research, ICP mapping and prospect outreach follow-up, so my time goes to buyers.
           </p>
@@ -83,6 +143,8 @@ export default function Home() {
             <a href={LINKEDIN} target="_blank" rel="noopener" className="bg-white text-[#121212] px-5 py-3.5 rounded-[10px] font-semibold text-[15.5px] border border-[#d4d4ce] hover:border-[#121212]">LinkedIn</a>
             <a href={`mailto:${EMAIL}`} className="bg-white text-[#121212] px-5 py-3.5 rounded-[10px] font-semibold text-[15.5px] border border-[#d4d4ce] hover:border-[#121212]">{EMAIL}</a>
           </div>
+          </div>
+          <TerritoryLog />
         </section>
 
         {/* Deal profile */}
