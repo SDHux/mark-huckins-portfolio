@@ -191,7 +191,7 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section id="top" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-16 md:pb-24 grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] gap-12 lg:gap-14 items-center">
+        <section id="top" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-16 md:pb-24 grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] gap-12 lg:gap-14 items-center">
           <div className="flex flex-col gap-7 md:gap-8">
           <span className={`${mono} text-[12.5px] md:text-[13px] tracking-[0.08em] text-[#5d5d57]`}>ENTERPRISE SALES EXECUTIVE · SAN DIEGO</span>
           <h1 className="m-0 text-[46px] sm:text-[60px] lg:text-[72px] leading-[0.98] tracking-[-0.035em] font-bold">I sell to the Fortune&nbsp;500. My agents work the territory.</h1>
@@ -231,7 +231,7 @@ export default function Home() {
         </section>
 
         {/* How I sell now */}
-        <section id="approach" className="scroll-mt-16 bg-[#121212] text-[#f6f6f3]">
+        <section id="approach" className="scroll-mt-28 md:scroll-mt-16 bg-[#121212] text-[#f6f6f3]">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16">
             <div className="flex flex-col gap-6">
               <span className={`${mono} text-[13px] tracking-[0.08em] text-[#9a9a92]`}>HOW I SELL NOW</span>
@@ -254,7 +254,7 @@ export default function Home() {
         </section>
 
         {/* Track record */}
-        <section id="record" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-20 md:pt-28 pb-16 flex flex-col gap-10">
+        <section id="record" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-20 md:pt-28 pb-16 flex flex-col gap-10">
           <div className="flex flex-wrap gap-4 items-baseline justify-between">
             <H2>Track record</H2>
             <span className={`${mono} text-[13px] text-[#5d5d57]`}>PRESIDENT'S CLUB · 127% QUOTA</span>
@@ -276,7 +276,7 @@ export default function Home() {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 py-16 md:py-20 flex flex-col gap-10">
+        <section id="skills" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 py-16 md:py-20 flex flex-col gap-10">
           <div className="flex flex-col gap-3 max-w-[720px]">
             <H2>Skills</H2>
             <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">Classic enterprise craft, with the AI go-to-market skills most sales orgs are still hiring for.</p>
@@ -298,7 +298,7 @@ export default function Home() {
         </section>
 
         {/* Tools & disciplines */}
-        <section id="tools" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 py-16 md:py-20 flex flex-col gap-10">
+        <section id="tools" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 py-16 md:py-20 flex flex-col gap-10">
           <div className="flex flex-col gap-3 max-w-[720px]">
             <H2>Tools &amp; disciplines</H2>
             <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">How the stack fits together: AI agents on top, working across the revenue tools underneath, on systems I've built myself.</p>
@@ -340,7 +340,7 @@ export default function Home() {
         </section>
 
         {/* Built */}
-        <section id="built" className="scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-20 md:pb-28 flex flex-col gap-8">
+        <section id="built" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-20 md:pb-28 flex flex-col gap-8">
           <div className="flex flex-col gap-3 max-w-[720px]">
             <H2>Built, not pitched</H2>
             <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">Three ventures I took from idea to live product with AI as the build team. They're proof I can do more than talk about AI.</p>
@@ -358,7 +358,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-16 border-t border-[#deded8]">
+        <section id="contact" className="scroll-mt-28 md:scroll-mt-16 border-t border-[#deded8]">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-20 md:py-28 flex flex-wrap gap-10 items-end justify-between">
             <div className="flex flex-col gap-4 max-w-[680px]">
               <h2 className="m-0 text-[42px] md:text-[64px] leading-none tracking-[-0.035em] font-bold">Hiring for enterprise sales? Let's talk.</h2>

@@ -19,10 +19,23 @@ export function SiteHeader({ page }: { page: "home" | "life" }) {
           <Link href="/off-the-clock" className={`hidden md:inline ${page === "life" ? "text-[#121212] font-semibold" : link}`}>
             Off the clock
           </Link>
-          <a href={to("#contact")} className={`hidden sm:inline ${link}`}>Contact</a>
+          <a href={to("#contact")} className={`hidden md:inline ${link}`}>Contact</a>
           <a href="/resume.pdf" target="_blank" rel="noopener" className="bg-[#121212] text-white px-4 py-2.5 rounded-lg font-semibold hover:opacity-90">
             Resume
           </a>
+        </div>
+      </nav>
+      {/* Phones: the section links in a slim scrollable row under the name. */}
+      <nav aria-label="Sections" className="md:hidden border-t border-[#deded8]">
+        <div className="px-5 py-2.5 flex gap-5 overflow-x-auto whitespace-nowrap text-[13.5px] [scrollbar-width:none]">
+          <a href={to("#approach")} className={link}>Approach</a>
+          <a href={to("#record")} className={link}>Track record</a>
+          <a href={to("#skills")} className={link}>Skills</a>
+          <a href={to("#built")} className={link}>Built</a>
+          <Link href="/off-the-clock" className={page === "life" ? "text-[#121212] font-semibold" : link}>
+            Off the clock
+          </Link>
+          <a href={to("#contact")} className={link}>Contact</a>
         </div>
       </nav>
     </header>
