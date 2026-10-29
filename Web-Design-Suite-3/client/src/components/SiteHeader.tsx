@@ -1,0 +1,44 @@
+import { Link } from "wouter";
+
+// The header shared by Home and Off the Clock. On Home the section links are
+// in-page anchors; elsewhere they go back to Home first.
+export function SiteHeader({ page }: { page: "home" | "life" }) {
+  const to = (hash: string) => (page === "home" ? hash : `/${hash}`);
+  const link = "text-[#3c3c38] hover:text-[#121212]";
+  return (
+    <header className="sticky top-0 z-40 bg-[#f6f6f3]/90 backdrop-blur border-b border-[#deded8]">
+      <nav aria-label="Main" className="max-w-[1200px] mx-auto px-5 md:px-8 py-4 flex flex-wrap gap-4 items-center justify-between">
+        <a href={page === "home" ? "#top" : "/"} className="text-[24px] md:text-[32px] leading-none font-bold uppercase tracking-[-0.01em] no-underline text-[#121212]">
+          Mark M. Huckins
+        </a>
+        <div className="flex flex-wrap gap-5 md:gap-7 items-center text-[14.5px]">
+          <a href={to("#approach")} className={`hidden lg:inline ${link}`}>Approach</a>
+          <a href={to("#record")} className={`hidden lg:inline ${link}`}>Track record</a>
+          <a href={to("#skills")} className={`hidden lg:inline ${link}`}>Skills</a>
+          <a href={to("#built")} className={`hidden lg:inline ${link}`}>Built</a>
+          <Link href="/off-the-clock" className={`hidden md:inline ${page === "life" ? "text-[#121212] font-semibold" : link}`}>
+            Off the clock
+          </Link>
+          <a href={to("#contact")} className={`hidden sm:inline ${link}`}>Contact</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener" className="bg-[#121212] text-white px-4 py-2.5 rounded-lg font-semibold hover:opacity-90">
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="max-w-[1200px] mx-auto px-5 md:px-8 pt-6 pb-10 border-t border-[#deded8] flex flex-wrap gap-x-6 gap-y-2 justify-between text-[13.5px] text-[#5d5d57]">
+      <span>© 2026 Mark M. Huckins · UMass Amherst, Isenberg School of Management · Anthropic Claude certified</span>
+      <span className="flex flex-wrap gap-x-6 gap-y-2">
+        <Link href="/off-the-clock" className="text-[#5d5d57] hover:text-[#121212]">Off the clock</Link>
+        <a href="/Mark_Huckins_Enterprise_Prospecting_Playbook.pdf" target="_blank" rel="noopener" className="text-[#5d5d57] hover:text-[#121212]">
+          Enterprise Prospecting Playbook (PDF)
+        </a>
+      </span>
+    </footer>
+  );
+}

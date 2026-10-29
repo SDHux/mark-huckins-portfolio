@@ -4,6 +4,8 @@
 // resume; keep "10+ years" (Mark's call).
 
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
+import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
 
 const LINKEDIN = "https://www.linkedin.com/in/mark-m-huckins/";
 const EMAIL = "mark.huckins@gmail.com";
@@ -185,19 +187,7 @@ const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="m-0 t
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f6f6f3] text-[#121212] font-['Inter_Tight',system-ui,sans-serif] antialiased">
-      <header className="sticky top-0 z-40 bg-[#f6f6f3]/90 backdrop-blur border-b border-[#deded8]">
-        <nav aria-label="Main" className="max-w-[1200px] mx-auto px-5 md:px-8 py-4 flex flex-wrap gap-4 items-center justify-between">
-          <a href="#top" className="text-[24px] md:text-[32px] leading-none font-bold uppercase tracking-[-0.01em] no-underline text-[#121212]">Mark M. Huckins</a>
-          <div className="flex flex-wrap gap-5 md:gap-7 items-center text-[14.5px]">
-            <a href="#approach" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Approach</a>
-            <a href="#record" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Track record</a>
-            <a href="#skills" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Skills</a>
-            <a href="#built" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Built</a>
-            <a href="#contact" className="hidden sm:inline text-[#3c3c38] hover:text-[#121212]">Contact</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener" className="bg-[#121212] text-white px-4 py-2.5 rounded-lg font-semibold hover:opacity-90">Resume</a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader page="home" />
 
       <main>
         {/* Hero */}
@@ -373,6 +363,9 @@ export default function Home() {
             <div className="flex flex-col gap-4 max-w-[680px]">
               <h2 className="m-0 text-[42px] md:text-[64px] leading-none tracking-[-0.035em] font-bold">Hiring for enterprise sales? Let's talk.</h2>
               <p className="m-0 text-[17px] md:text-[18px] text-[#3c3c38]">Open to Enterprise AE and strategic account roles.</p>
+              <Link href="/off-the-clock" className="self-start text-[15.5px] font-semibold text-[#1f3fd6] hover:text-[#132a99]">
+                Off the clock: what shaped me →
+              </Link>
             </div>
             <div className="flex flex-col gap-2.5 text-[17px] font-semibold">
               <a href={`mailto:${EMAIL}`} className="text-[#1f3fd6] hover:text-[#132a99]">{EMAIL}</a>
@@ -383,10 +376,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="max-w-[1200px] mx-auto px-5 md:px-8 pt-6 pb-10 border-t border-[#deded8] flex flex-wrap gap-x-6 gap-y-2 justify-between text-[13.5px] text-[#5d5d57]">
-        <span>© 2026 Mark M. Huckins · UMass Amherst, Isenberg School of Management · Anthropic Claude certified</span>
-        <a href="/Mark_Huckins_Enterprise_Prospecting_Playbook.pdf" target="_blank" rel="noopener" className="text-[#5d5d57] hover:text-[#121212]">Enterprise Prospecting Playbook (PDF)</a>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
