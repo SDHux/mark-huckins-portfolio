@@ -117,7 +117,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#f6f6f3] text-[#121212] font-['Inter_Tight',system-ui,sans-serif] antialiased">
       <header className="sticky top-0 z-40 bg-[#f6f6f3]/90 backdrop-blur border-b border-[#deded8]">
         <nav aria-label="Main" className="max-w-[1200px] mx-auto px-5 md:px-8 py-4 flex flex-wrap gap-4 items-center justify-between">
-          <a href="#top" className="text-[24px] md:text-[32px] leading-none font-bold uppercase tracking-[-0.01em] no-underline text-[#121212]">Mark Huckins</a>
+          <a href="#top" className="text-[24px] md:text-[32px] leading-none font-bold uppercase tracking-[-0.01em] no-underline text-[#121212]">Mark M. Huckins</a>
           <div className="flex flex-wrap gap-5 md:gap-7 items-center text-[14.5px]">
             <a href="#approach" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Approach</a>
             <a href="#record" className="hidden md:inline text-[#3c3c38] hover:text-[#121212]">Track record</a>
