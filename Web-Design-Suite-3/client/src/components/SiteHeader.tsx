@@ -14,6 +14,7 @@ export function SiteHeader({ page }: { page: "home" | "life" }) {
           <a href={to("#record")} className={`hidden lg:inline ${link}`}>Track record</a>
           <a href={to("#skills")} className={`hidden lg:inline ${link}`}>Skills</a>
           <a href={to("#built")} className={`hidden lg:inline ${link}`}>Built</a>
+          <a href={to("#writing")} className={`hidden lg:inline ${link}`}>Writing</a>
           <a href={to("#contact")} className={`hidden md:inline ${link}`}>Contact</a>
           <a href="/resume.pdf" target="_blank" rel="noopener" className="bg-[#121212] text-white px-4 py-2.5 rounded-lg font-semibold hover:opacity-90">
             Resume
@@ -27,6 +28,7 @@ export function SiteHeader({ page }: { page: "home" | "life" }) {
           <a href={to("#record")} className={link}>Track record</a>
           <a href={to("#skills")} className={link}>Skills</a>
           <a href={to("#built")} className={link}>Built</a>
+          <a href={to("#writing")} className={link}>Writing</a>
           <a href={to("#contact")} className={link}>Contact</a>
         </div>
       </nav>

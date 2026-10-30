@@ -181,6 +181,14 @@ const built = [
   { kicker: "Consumer brand", name: "LiVD", text: "A luxury adventure travel brand: identity, site and positioning. A different muscle from B2B.", cta: "livdirl.com →", href: "https://livdirl.com" },
 ];
 
+// Sales playbooks I wrote. The srene.io ones stay hosted there (one copy to keep current).
+const writing = [
+  { kicker: "Playbook · 4 resources", name: "Enterprise Motions", text: "Committee selling, deal orchestration, procurement and security review, and the financial fluency to hold your own with the executives in the room.", cta: "Read on srene.io →", href: "https://srene.io/resources/enterprise-motions/" },
+  { kicker: "Playbook · 8 resources", name: "Aspiring Leaders", text: "What actually changes between each rep role and the manager seat, and two tools to prove you can lead before anyone gives you the title.", cta: "Read on srene.io →", href: "https://srene.io/resources/aspiring-leaders/" },
+  { kicker: "Playbook · 5-page PDF", name: "The Prospecting Playbook", text: "An outreach system: cadence, qualification criteria, and the mistakes that quietly kill response rates.", cta: "Download PDF →", href: "https://srene.io/playbooks/SRENE_Prospecting_Playbook.pdf" },
+  { kicker: "Playbook · 9-page PDF", name: "Enterprise Prospecting Playbook", text: "A repeatable framework from first signal to first meeting: account research, the 3x3 call prep, sequencing and the 5-15-3 model.", cta: "Download PDF →", href: "/Mark_Huckins_Enterprise_Prospecting_Playbook.pdf" },
+];
+
 const H2 = ({ children }: { children: React.ReactNode }) => <h2 className="m-0 text-[38px] md:text-[52px] leading-[1.04] tracking-[-0.03em] font-bold">{children}</h2>;
 
 export default function Home() {
@@ -351,6 +359,25 @@ export default function Home() {
                 <b className="text-[24px]">{b.name}</b>
                 <span className="text-[15.5px] leading-[1.5] text-[#3c3c38]">{b.text}</span>
                 <span className="text-[14.5px] font-semibold text-[#1f3fd6] mt-auto">{b.cta}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Writing */}
+        <section id="writing" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-4 md:pt-6 pb-20 md:pb-28 flex flex-col gap-8">
+          <div className="flex flex-col gap-3 max-w-[720px]">
+            <H2>Written by me</H2>
+            <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">Sales playbooks I wrote for reps and leaders, from prospecting to the executive room. Free to read.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {writing.map((w) => (
+              <a key={w.name} href={w.href} target="_blank" rel="noopener" className="no-underline text-[#121212] bg-white border border-[#deded8] rounded-[14px] p-7 flex flex-col gap-3.5 hover:border-[#121212] transition-colors">
+                <span className={`${mono} text-[12.5px] uppercase text-[#1f3fd6]`}>{w.kicker}</span>
+                <b className="text-[22px] leading-[1.15]">{w.name}</b>
+                <span className="text-[15px] leading-[1.5] text-[#3c3c38]">{w.text}</span>
+                <span className="text-[13px] text-[#5d5d57]">By Mark M. Huckins</span>
+                <span className="text-[14.5px] font-semibold text-[#1f3fd6] mt-auto">{w.cta}</span>
               </a>
             ))}
           </div>
