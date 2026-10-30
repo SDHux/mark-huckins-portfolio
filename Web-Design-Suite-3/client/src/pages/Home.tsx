@@ -4,7 +4,6 @@
 // resume; keep "10+ years" (Mark's call).
 
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
 import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
 
 const LINKEDIN = "https://www.linkedin.com/in/mark-m-huckins/";
@@ -363,9 +362,6 @@ export default function Home() {
             <div className="flex flex-col gap-4 max-w-[680px]">
               <h2 className="m-0 text-[42px] md:text-[64px] leading-none tracking-[-0.035em] font-bold">Hiring for enterprise sales? Let's talk.</h2>
               <p className="m-0 text-[17px] md:text-[18px] text-[#3c3c38]">Open to Enterprise AE and strategic account roles.</p>
-              <Link href="/off-the-clock" className="self-start text-[15.5px] font-semibold text-[#1f3fd6] hover:text-[#132a99]">
-                Off the clock: what shaped me →
-              </Link>
             </div>
             <div className="flex flex-col gap-2.5 text-[17px] font-semibold">
               <a href={`mailto:${EMAIL}`} className="text-[#1f3fd6] hover:text-[#132a99]">{EMAIL}</a>
