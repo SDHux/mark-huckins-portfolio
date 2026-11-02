@@ -176,7 +176,7 @@ const stack = [
 ];
 
 const built = [
-  { kicker: "GTM AI stack", name: "LaiGo", text: "A working GTM system: AI agents source, score and work accounts, learn what wins, and leave the calls that matter to people.", cta: "See it live →", href: "https://laigo-gtm.netlify.app" },
+  { kicker: "GTM AI stack", name: "LaiGo", text: "How I deploy AI as an AE across territory development, prospecting, qualification and deal management. Years in the field set the plays; AI multiplies them. The judgment and the relationships stay mine.", cta: "See it live →", href: "https://laigo-gtm.netlify.app/" },
   { kicker: "AI GTM system", name: "SRENE.io", text: "The go-to-market system: what a modern seller's process looks like when AI runs through all of it.", cta: "srene.io →", href: "https://www.srene.io" },
   { kicker: "Product", name: "myBivy", text: "A deal room built by a seller for sellers, designed and shipped with Claude as a self-service platform.", cta: "Try the demo →", href: "https://mybivy.com/?demo=team" },
   { kicker: "Consumer brand", name: "LiVD", text: "A luxury adventure travel brand: identity, site and positioning. A different muscle from B2B.", cta: "livdirl.com →", href: "https://livdirl.com" },
