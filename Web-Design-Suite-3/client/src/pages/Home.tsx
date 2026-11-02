@@ -13,8 +13,8 @@ const mono = "font-['IBM_Plex_Mono',monospace]";
 
 const dealProfile = [
   { big: "2–3", text: "six-figure deals closed per quarter, on a 3–6 month average cycle" },
-  { big: "$325K", text: "average ACV across net new and expansion; $1.2M average multi-year TCV" },
-  { big: "$1.5M", text: "largest single deal; Fortune 500 logos include Cisco, Microsoft, Walmart and Kroger" },
+  { big: "127%", text: "of net new quota at 1WorldSync; President's Club at Salsify in the first 6 months" },
+  { big: "$2.5M+", text: "ARR managed at Salsify, top five company-wide, with Cisco, Bosch and Kellogg's" },
   { big: "±10%", text: "forecast accuracy for 11 consecutive quarters; commit called right for 8" },
 ];
 
@@ -176,6 +176,7 @@ const stack = [
 ];
 
 const built = [
+  { kicker: "GTM AI stack", name: "LaiGo", text: "A working GTM system: AI agents source, score and work accounts, learn what wins, and leave the calls that matter to people.", cta: "See it live →", href: "https://laigo-gtm.netlify.app" },
   { kicker: "AI GTM system", name: "SRENE.io", text: "The go-to-market system: what a modern seller's process looks like when AI runs through all of it.", cta: "srene.io →", href: "https://www.srene.io" },
   { kicker: "Product", name: "myBivy", text: "A deal room built by a seller for sellers, designed and shipped with Claude as a self-service platform.", cta: "Try the demo →", href: "https://mybivy.com/?demo=team" },
   { kicker: "Consumer brand", name: "LiVD", text: "A luxury adventure travel brand: identity, site and positioning. A different muscle from B2B.", cta: "livdirl.com →", href: "https://livdirl.com" },
@@ -350,9 +351,9 @@ export default function Home() {
         <section id="built" className="scroll-mt-28 md:scroll-mt-16 max-w-[1200px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-20 md:pb-28 flex flex-col gap-8">
           <div className="flex flex-col gap-3 max-w-[720px]">
             <H2>Built, not pitched</H2>
-            <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">Three ventures I took from idea to live product with AI as the build team. They're proof I can do more than talk about AI.</p>
+            <p className="m-0 text-[17px] md:text-[18px] leading-[1.55] text-[#3c3c38]">Four ventures I took from idea to live product with AI as the build team. They're proof I can do more than talk about AI.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {built.map((b) => (
               <a key={b.name} href={b.href} target="_blank" rel="noopener" className="no-underline text-[#121212] bg-white border border-[#deded8] rounded-[14px] p-7 flex flex-col gap-3.5 hover:border-[#121212] transition-colors">
                 <span className={`${mono} text-[12.5px] uppercase text-[#1f3fd6]`}>{b.kicker}</span>
